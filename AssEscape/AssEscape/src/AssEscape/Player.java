@@ -10,6 +10,7 @@ public class Player {
 	int y;
 	int finalx;
 	int finaly;
+	int moverange;
 	
 	Image player;
 	Image player2;
@@ -28,7 +29,7 @@ public class Player {
 	
 	Animation current;
 	
-	public Player(){
+	public Player(int movelimit){
 		
 		try {
 			player = new Image("img/player.png");
@@ -49,6 +50,8 @@ public class Player {
 		moveRight = new Animation(right, duration, true);
 		
 		current = moveDown;
+		
+		moverange = movelimit;
 		
 	}
 	

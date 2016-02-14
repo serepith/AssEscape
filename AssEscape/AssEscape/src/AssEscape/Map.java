@@ -7,11 +7,13 @@ public class Map {
 	int height;
 	int tileheight;
 	Enemy [] enemies;
+	PowerUp [] powerups;
 	
-	public Map(Image mappy, int nheight, Enemy [] enem){
+	public Map(Image mappy, int nheight, Enemy [] enem, PowerUp [] power){
 		map = mappy;
 		height = nheight;
 		tileheight = 480/height;
 		enemies = enem;
+		powerups = power;
 	}
 }

@@ -5,7 +5,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 public class Enemy {
-	boolean alive = true;
+	boolean spottedplayer = false;
 	
 	int x;
 	int y;
@@ -14,6 +14,9 @@ public class Enemy {
 	int finalx;
 	int finaly;
 	int moverange;
+	
+	//0 = has not moved yet, 1 = moving, 2 = has moved this turn, 3 = dead
+	int turn;
 	
 	Image enemy;
 	Image enemy2;
@@ -32,7 +35,7 @@ public class Enemy {
 	
 	Animation current;
 	
-	public Enemy(int tileplacex, int tileplacey, int tilewidth){
+	public Enemy(int tileplacex, int tileplacey, int tilewidth, int move){
 		try {
 			enemy = new Image("img/enemy1.png");
 			enemy2 = enemy;
@@ -46,8 +49,6 @@ public class Enemy {
 		
 		x = 60 + tilex * tilewidth;
 		y = 60 + tiley * tilewidth;
-		
-		System.out.println(x);
 		
 		finalx = x;
 		finaly = y;
@@ -63,6 +64,10 @@ public class Enemy {
 		moveRight = new Animation(right, duration, true);
 		
 		current = moveDown;
+		
+		moverange = move;
+		
+		turn = 0;
 		
 	}
 }
