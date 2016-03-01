@@ -1,5 +1,3 @@
-package AssEscape;
-
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -134,27 +132,27 @@ public class Gameplay extends BasicGameState{
 		//refers to highlight over squares upon mouseover
 		drawhighlight = false;
 		
-		level1enemies = new Enemy [] {};
-		level2enemies = new Enemy [] {new DeanCos(10, 5, 30, 6), new Enemy(6, 7, 30, 6, "img/Waterman.png", 2), new Enemy(7, 10, 30, 6, "img/McLaughlin.png", 2)};
+		level1enemies = new Enemy [] {new DeanCos(10, 10, 30, 3), new Enemy(5, 7, 30, 6, "img/McLaughlin.png", 2)};
+		level2enemies = new Enemy [] {new DeanCos(10, 5, 30, 6), new Enemy(6, 7, 30, 6, "img/Burke.png", 2), new Enemy(7, 10, 30, 6, "img/McLaughlin.png", 2)};
 		//level2enemies = new Enemy [] {new DeanCos(10, 5, 30, 6)};
-		level3enemies = new Enemy [] {};
-		level4enemies = new Enemy [] {};
-		level5enemies = new Enemy [] {};
-		level6enemies = new Enemy [] {};
+		level3enemies = new Enemy [] {new DeanCos(11, 5, 30, 2), new Enemy(3, 6, 30, 1, "img/Spanier.png", 2), new Enemy(11, 11, 30, 1, "img/McLaughlin.png", 2)};
+		level4enemies = new Enemy [] {new DeanCos(11, 7, 30, 4), new Enemy(4, 6, 30, 1, "img/DocJ.png", 2), new Enemy(7, 11, 30, 1, "img/Spanier.png", 2)};
+		level5enemies = new Enemy [] {new DeanCos(9, 6, 30, 4), new Enemy(5, 7, 30, 3, "img/Waterman.png", 3), new Enemy(1,9, 30, 3, "img/MrGary.png", 2)};
+		level6enemies = new Enemy [] {new DeanCos(9, 6, 30, 6), new Enemy(9, 14, 30, 1, "img/Waterman.png", 2), new Enemy(15, 0, 30, 3, "img/MrGary.png", 2), new Enemy(12, 10, 30, 3, "img/Burke.png", 2), new Enemy(7, 8, 30, 3, "img/Mclaughlin.png", 2), new Enemy(0, 5, 30, 3, "img/DocJ.png", 2)};
 		
-		level1powerups = new PowerUp [] {};
+		level1powerups = new PowerUp [] {new PowerUp(excuselvl1, 5, 13, 30)};
 		level2powerups = new PowerUp [] {new PowerUp(excuselvl1, 6, 12, 30)};
-		level3powerups = new PowerUp [] {};
-		level4powerups = new PowerUp [] {};
-		level5powerups = new PowerUp [] {};
-		level6powerups = new PowerUp [] {};
+		level3powerups = new PowerUp [] {new PowerUp(excuselvl1, 2, 5, 30), new PowerUp(excuselvl1, 4, 4, 30)};
+		level4powerups = new PowerUp [] {new PowerUp(excuselvl1, 7, 5, 30), new PowerUp(excuselvl1, 6, 16, 30)};
+		level5powerups = new PowerUp [] {new PowerUp(excuselvl1, 9, 9, 30), new PowerUp(excuselvl1, 11, 14, 30), new PowerUp(excuselvl1, 4, 11, 30)};
+		level6powerups = new PowerUp [] {new PowerUp(excuselvl1, 0, 11, 30), new PowerUp(excuselvl1, 3, 8, 30), new PowerUp(excuselvl1, 5, 3, 30), new PowerUp(excuselvl1, 10, 2, 30), new PowerUp(excuselvl1, 13, 0, 30), new PowerUp(excuselvl1, 15, 4, 30), new PowerUp(excuselvl1, 12, 7, 30), new PowerUp(excuselvl1, 4, 14, 30)};
 		
 		
 		level1walls = new ImpassableZone [] {new ImpassableZone(450, 90, 30, 90), new ImpassableZone(210, 240, 150, 90)};
 		level2walls = new ImpassableZone [] {new ImpassableZone(90, 60, 150, 60), new ImpassableZone(360, 60, 180, 60), new ImpassableZone(60, 150, 90, 330), new ImpassableZone(300, 240, 60, 120), new ImpassableZone(420, 150, 120, 60), new ImpassableZone(480, 210, 60, 120), new ImpassableZone(300, 450, 90, 90), new ImpassableZone(480, 450, 60, 90), new ImpassableZone(150, 450, 120, 90), new ImpassableZone(450, 330, 90, 90)};
-		level3walls = new ImpassableZone [] {};
+		level3walls = new ImpassableZone [] {new ImpassableZone(210, 210, 120, 30), new ImpassableZone(390, 240, 60, 60), new ImpassableZone(240, 330, 30, 30), new ImpassableZone(210, 360, 60, 60), new ImpassableZone(240, 420, 30, 30)};
 		level4walls = new ImpassableZone [] {new ImpassableZone(300, 60, 300, 60), new ImpassableZone(60, 180, 60, 120), new ImpassableZone(300, 180, 60, 210), new ImpassableZone(450, 180, 90, 180), new ImpassableZone(150, 270, 60, 270), new ImpassableZone(60, 420, 60, 120), new ImpassableZone(270, 480, 150, 60)};
-		level5walls = new ImpassableZone [] {};
+		level5walls = new ImpassableZone [] {new ImpassableZone(150, 150, 60, 30), new ImpassableZone(390, 60, 90, 30), new ImpassableZone(420, 90, 60, 30), new ImpassableZone(150, 240, 30, 60), new ImpassableZone(180, 210, 30, 120), new ImpassableZone(150, 330, 60, 240), new ImpassableZone(270, 510, 60, 30), new ImpassableZone(510, 480, 30, 60)};
 		level6walls = new ImpassableZone [] {new ImpassableZone(240, 150, 120, 90), new ImpassableZone(480, 210, 60, 120), new ImpassableZone(90, 270, 60, 60), new ImpassableZone(90, 360, 60, 60), new ImpassableZone(450, 360, 90, 120)};
 		
 		
@@ -454,23 +452,42 @@ public class Gameplay extends BasicGameState{
 					//TODO: sometimes will glitch on wall. FIX
 					//loop one: if an appropriate spot has not been found calculate until a spot that isn't
 					//in a wall or off the map is chosen
+					int vertmove;
+					int horizmove;
+					
 					while(!foundspot){
+									
+						//check if car
+						if (current.enemies[i] instanceof Car) {
 						
-						double totalmovedub = Math.random()*(current.enemies[i].moverange - 1);
-						int totalmove = (int)totalmovedub + 1;
-						
-						double vertmovedub = (Math.random()*totalmove - 1);
-						int vertmove = (int)vertmovedub + 1;
-						int horizmove = totalmove - vertmove;
-						
-						if(Math.random() < 0.5){
-							vertmove = -vertmove;
+							Car car = (Car) current.enemies[i];
+							
+							if (car.isHorizontal()) {
+								horizmove = current.enemies[i].moverange;
+								vertmove = 0;
+							}
+							else {
+								horizmove = 0;
+								vertmove = current.enemies[i].moverange;
+							}
 						}
-						
-						if(Math.random() < 0.5){
-							horizmove = -horizmove;
+						else{
+							double totalmovedub = Math.random()*(current.enemies[i].moverange - 1);
+							int totalmove = (int)totalmovedub + 1;
+							
+							double vertmovedub = (Math.random()*totalmove - 1);
+							 vertmove = (int)vertmovedub + 1;
+							 horizmove = totalmove - vertmove;
+							
+							if(Math.random() < 0.5){
+								vertmove = -vertmove;
+							}
+							
+							if(Math.random() < 0.5){
+								horizmove = -horizmove;
+							}
+
 						}
-						
 						current.enemies[i].finalx = current.enemies[i].x + horizmove * current.tileheight;
 						current.enemies[i].finaly = current.enemies[i].y + vertmove * current.tileheight;
 						
@@ -627,6 +644,7 @@ public class Gameplay extends BasicGameState{
 							alert.play();
 							current.enemies[i].turn = 3;
 						}
+
 					}
 				}
 				
